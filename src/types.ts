@@ -18,3 +18,10 @@ export type definition = {
     direction: 'up' | 'down' | 'left' | 'right';
     length: number[];
 };
+
+export type file = {
+    name: string;
+    height: number;
+    width: number;
+    grid: valueGrid;
+} | null;

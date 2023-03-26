@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CrossWordModule from '../components/CrosswordModule';
+import CrossWordModule from '../components/CrosswordBuilder';
 import SettingsModule from '../components/SettingsModule';
 import ActionBar from '../components/SettingsModule/ActionBar';
 import * as types from '../types';
