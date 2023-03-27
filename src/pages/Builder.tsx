@@ -56,7 +56,7 @@ const Builder = (props: Props) => {
         setSelected({ x, y });
     }
 
-    function setCellType(newType: types.definition | null) {
+    function setCellType(newType: types.definition | types.empty | null) {
         if (!selected) {
             return;
         }

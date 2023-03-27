@@ -2,7 +2,7 @@ export type cell = {
     value: string;
     x: number;
     y: number;
-    type: null | definition;
+    type: null | definition | empty;
 };
 
 export type valueGrid = Array<any>;
@@ -17,6 +17,11 @@ export type definition = {
     type: 'str' | 'img';
     direction: 'up' | 'down' | 'left' | 'right';
     length: number[];
+};
+
+export type empty = {
+    type: 'emt';
+    direction: '';
 };
 
 export type file = {

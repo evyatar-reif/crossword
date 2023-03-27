@@ -19,7 +19,7 @@ const Cell = (props: Props) => {
     let className =
         'flex justify-center text-center border w-[80px] h-[80px] resize-none focus:border-black focus:border-[2px] outline-none text-center capitalize ';
     if (cell.type) className += 'bg-black overflow-auto text-white text-xs';
-
+    else if (cell.value == entry) className += 'bg-green-200 ';
     let transform = 'transform fill-white w-[16px] h-[16px] ';
 
     if (cell.type?.direction == 'up') transform += '-rotate-90';
@@ -37,14 +37,18 @@ const Cell = (props: Props) => {
                         maxLength={cell.type ? undefined : 1}
                         onChange={(e) => onChange(e.target.value)}
                     />
-                    <div className='flex absolute bottom-[2px] transform left-[50%] translate-x-[-50%] items-center select-none'>
-                        <span className='text-white'>{cell.type.length} </span>
-                        <img
-                            className={transform}
-                            src={arrow}
-                            alt='dir'
-                        />
-                    </div>
+                    {cell.type.type != 'emt' && (
+                        <div className='flex absolute bottom-[2px] transform left-[50%] translate-x-[-50%] items-center select-none'>
+                            <span className='text-white'>
+                                {cell.type.length}{' '}
+                            </span>
+                            <img
+                                className={transform}
+                                src={arrow}
+                                alt='dir'
+                            />
+                        </div>
+                    )}
                 </div>
             ) : (
                 <textarea

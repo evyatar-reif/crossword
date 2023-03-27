@@ -36,14 +36,18 @@ const Cell = (props: Props) => {
                         maxLength={cell.type ? undefined : 1}
                         onChange={(e) => onChange(e.target.value)}
                     />
-                    <div className='flex absolute bottom-[2px] transform left-[50%] translate-x-[-50%] items-center select-none'>
-                        <span className='text-white'>{cell.type.length} </span>
-                        <img
-                            className={transform}
-                            src={arrow}
-                            alt='dir'
-                        />
-                    </div>
+                    {cell.type.type != 'emt' && (
+                        <div className='flex absolute bottom-[2px] transform left-[50%] translate-x-[-50%] items-center select-none'>
+                            <span className='text-white'>
+                                {cell.type.length}{' '}
+                            </span>
+                            <img
+                                className={transform}
+                                src={arrow}
+                                alt='dir'
+                            />
+                        </div>
+                    )}
                 </div>
             ) : (
                 <textarea

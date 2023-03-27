@@ -24,8 +24,6 @@ const Viewer = (props: Props) => {
             setMatchGrid(newMatchGrid);
         }
     }
-    console.log(isWin);
-
     useEffect(() => {
         setIsWin(checkWin());
 

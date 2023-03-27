@@ -5,7 +5,7 @@ import ex from '../../../assets/ex.svg';
 import * as types from '../../../types';
 
 type Props = {
-    setCellType: (type: types.definition | null) => void;
+    setCellType: (type: types.definition | types.empty | null) => void;
 };
 
 const ActionBar = (props: Props) => {
@@ -28,6 +28,13 @@ const ActionBar = (props: Props) => {
 
     return (
         <div className='flex gap-[5px]'>
+            <button
+                onClick={() =>
+                    props.setCellType({ type: 'emt', direction: '' })
+                }
+                className='flex flex-col justify-center h-[50px] bg-white p-[5px] rounded'>
+                <span>BLK</span>
+            </button>
             <button
                 onClick={() => onClick('down')}
                 className='flex flex-col justify-center h-[50px] bg-white p-[5px] rounded'>
