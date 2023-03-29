@@ -7,7 +7,7 @@ type Props = {};
 
 const Viewer = (props: Props) => {
     const [file, setFile] = useState<types.file>(null);
-    const [matchGrid, setMatchGrid] = useState([[]]);
+    const [matchGrid, setMatchGrid] = useState<any>([[]]);
     const [isWin, setIsWin] = useState(false);
 
     async function onLoad(file: types.file) {
